@@ -124,7 +124,7 @@ class PllController extends Controller
                 }
                 $des = '';
                 foreach ($dataTitle as $vl) {
-                    $des .= $vl . $ktdb[array_rand($ktdb, 1)] . "\n";
+                    $des .= $vl .' '. $ktdb[array_rand($ktdb, 1)] . "\n";
                 }
 
                 for ($i = 0; $i < $numberPll; $i++) {
@@ -136,7 +136,7 @@ class PllController extends Controller
                     $arrMyVideo = $rdMyVideo->shuffle()->all();
 
                     $playlistSnippet = new Google_Service_YouTube_PlaylistSnippet();
-                    $playlistSnippet->setTitle($dataTitle[$i] . $ktdb[array_rand($ktdb, 1)]);
+                    $playlistSnippet->setTitle($dataTitle[$i] .' ' . $ktdb[array_rand($ktdb, 1)]);
                     $playlistSnippet->setDescription($des);
 
                     $playlistStatus = new Google_Service_YouTube_PlaylistStatus();
